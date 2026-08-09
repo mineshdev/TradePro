@@ -1,48 +1,72 @@
 import React from "react";
+import Hero from "./Hero";
+import LeftSection from "./LeftSection";
+import RightSection from "./RightSection";
+import Universe from "./Universe";
 
 function ProductsPage() {
   return (
-    <div className="container py-5">
-      <h1 className="mb-4">Our Products</h1>
-      <p className="text-muted">
-        Explore our range of trading and investment products designed to
-        help you grow your portfolio.
+    <div>
+      <Hero />
+
+      {/* Kite */}
+      <LeftSection
+        image="media/images/kite.png"
+        title="Kite"
+        description="Our ultra-fast flagship trading platform with streaming market data, advanced charts, an elegant UI, and more. Enjoy the Kite experience seamlessly on your Android and iOS devices."
+        links={["Try demo", "Learn more"]}
+      />
+
+      {/* Console */}
+      <RightSection
+        image="media/images/console.png"
+        title="Console"
+        description="The central dashboard for your Zerodha account. Gain insights into your trades and investments with in-depth reports and visualisations."
+        links={["Learn more"]}
+      />
+
+      {/* Coin */}
+      <LeftSection
+        image="media/images/coin.png"
+        title="Coin"
+        description="Buy direct mutual funds online, commission-free, delivered directly to your Demat account. Enjoy the investment experience on your Android and iOS devices."
+        links={["Coin"]}
+      />
+
+      {/* Kite Connect API */}
+      <RightSection
+        image="media/images/kiteconnect.png"
+        title="Kite Connect API"
+        description="Build powerful trading platforms and experiences with our super simple HTTP/JSON APIs. If you are a startup, build your investment app and showcase it to our clientbase."
+        links={["Kite Connect"]}
+      />
+
+      {/* Varsity mobile */}
+      <LeftSection
+        image="media/images/varsity.png"
+        title="Varsity mobile"
+        description="An easy to grasp, collection of stock market lessons with in-depth coverage and illustrations. Content is broken down into bite-size cards to help you learn on the go."
+      />
+
+      <p
+        style={{
+          textAlign: "center",
+          fontSize: "18px",
+          color: "#444",
+          padding: "20px 40px 60px",
+          fontFamily:
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif",
+        }}
+      >
+        Want to know more about our technology stack? Check out the{" "}
+        <a href="#" style={{ color: "#387ed1", textDecoration: "none" }}>
+          Zerodha.tech
+        </a>{" "}
+        blog.
       </p>
 
-      <div className="row mt-4">
-        <div className="col-md-4 mb-4">
-          <div className="card h-100 shadow-sm">
-            <div className="card-body">
-              <h5 className="card-title">Kite</h5>
-              <p className="card-text">
-                Our flagship trading platform, blazing fast and easy to use.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-4 mb-4">
-          <div className="card h-100 shadow-sm">
-            <div className="card-body">
-              <h5 className="card-title">Console</h5>
-              <p className="card-text">
-                The backoffice for all your reports and analytics needs.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-4 mb-4">
-          <div className="card h-100 shadow-sm">
-            <div className="card-body">
-              <h5 className="card-title">Coin</h5>
-              <p className="card-text">
-                Direct mutual funds platform, invest with zero commission.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Zerodha Universe */}
+      <Universe />
     </div>
   );
 }

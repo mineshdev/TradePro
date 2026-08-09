@@ -1,39 +1,54 @@
 import React from "react";
+import Hero from "./Hero";
+import CreateTicket from "./CreateTicket";
 
-function SupportPage() {
+const SupportPage = () => {
+  const styles = {
+    page: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    content: {
+      display: "flex",
+      gap: "40px",
+      marginTop: "30px",
+      width: "80%",
+    },
+    faq: {
+      background: "#f1f3f4",
+      padding: "20px",
+      borderRadius: "8px",
+      flex: 0.5,
+    },
+    list: {
+      listStyle: "none",
+      padding: 0,
+      margin: 0,
+    },
+    listItem: {
+      marginBottom: "10px",
+      color: "#333",
+    },
+  };
+
   return (
-    <div className="container py-5">
-      <h1 className="mb-4">Support</h1>
-      <p className="text-muted">
-        Need help? Browse our support resources or reach out to our team.
-      </p>
-
-      <div className="row mt-4">
-        <div className="col-md-6 mb-4">
-          <div className="card h-100 shadow-sm">
-            <div className="card-body">
-              <h5 className="card-title">Help Center</h5>
-              <p className="card-text">
-                Find answers to frequently asked questions and step-by-step
-                guides.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-6 mb-4">
-          <div className="card h-100 shadow-sm">
-            <div className="card-body">
-              <h5 className="card-title">Contact Us</h5>
-              <p className="card-text">
-                Reach out to our support team for personalised assistance.
-              </p>
-            </div>
-          </div>
-        </div>
+    <div style={styles.page}>
+      <Hero />
+      <div style={styles.content}>
+        <CreateTicket />
+        <aside style={styles.faq}>
+          <h3>Quick Links</h3>
+          <ul style={styles.list}>
+            <li style={styles.listItem}>Account Opening</li>
+            <li style={styles.listItem}>Kite Login Issues</li>
+            <li style={styles.listItem}>Fund Withdrawal</li>
+            <li style={styles.listItem}>Margin & Pledging</li>
+          </ul>
+        </aside>
       </div>
     </div>
   );
-}
+};
 
 export default SupportPage;
